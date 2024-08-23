@@ -20,4 +20,4 @@ if __name__ == "__main__":
     file_name = "table.csv" 
     print(read_file(file_name))
     
-#xD
+#XD
