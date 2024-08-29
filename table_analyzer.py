@@ -24,7 +24,8 @@ def print_df_uniques():
     df = read_file(file_name)
     print(f"** unique elements of each column **")
     for i in df.columns:
-        print(i,":", pd.unique(df[i]), "\n")
+        uniq_elements = pd.unique(df[i])
+        print(f"i,:, {uniq_elements}; UNIQUE ELEMENTS COUNT: {len(uniq_elements)}")
 def print_df_nulls():
     df = read_file(file_name)        
     print(f"** sumarize Nan, None, NaT for each column **")
@@ -34,18 +35,16 @@ def print_functions_names():
     functions_cleaned = [f"{x[0]}()" for x in functions]
 
     return functions_cleaned
-
-def execute_all_functions():
-    pass
-
-    
-
-
+ 
 if __name__ == "__main__":
     # change value of file_name variable acording to the name of your file
     file_name = "collatz_v4_100kk-gz.parquet" 
     # print(read_file(file_name))git add
     # TO DO: execute multiple functions (all in this file)
     print(print_functions_names())
-    execute_all_functions()
-
+    print_df()
+    print_df_info()
+    print_df_describe()
+    print_df_uniques()
+    print_df_uniques()
+    print_df_nulls()
