@@ -19,7 +19,6 @@ def read_file(file_name):
     else:
         print("not that type BRO!!!!!")
 
-    return df
 
 def print_df():
     df = read_file(file_name)
