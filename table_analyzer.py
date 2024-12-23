@@ -3,7 +3,6 @@ import inspect
 import table_analyzer
 
 def read_file(file_name):
-    # TO DO  use proper function depending from file extension: (.xlsx, .csv, .parquet) -> DONE!!!!!
     if file_name[-8:] == ".parquet":
         print(file_name[-8:])
         df = pd.read_parquet(file_name)
@@ -54,9 +53,8 @@ if __name__ == "__main__":
     # change value of file_name variable acording to the name of your file
     
     file_name = "SampleSalesData/sales_data_sample.csv" 
-    # file_name = "collatz_v4_50kk-gz.parquet"
-    # print(read_file(file_name))git add
-    # TO DO: execute multiple functions (all in this file)
+    # file_name = "name_of_your_file.extension"
+
     print(print_functions_names())
     print_df()
     print_df_info()
