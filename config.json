@@ -1,0 +1,10 @@
+{
+"run_this": [
+{"method": "_file_to_df"}
+,{"method": "print_df"}
+,{"method": "print_df_info"}
+,{"method": "print_df_describe"}
+,{"method": "print_df_uniques"}
+,{"method": "print_df_nulls"}
+]
+}
