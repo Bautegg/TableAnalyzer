@@ -49,9 +49,11 @@ class UTA:
         print(f"** sumarize Nan, None, NaT for each column **")
         print(self.file_df.isnull().sum())
 
-class ExecutorUTA:
-    def __init__(self,json_config, file_name):
-        self.json_config = json_config
+class ExecutorUTA():
+    def __init__(self,json_path, file_name):
+        with open(json_path, "r") as file:
+            config = json.load(file)
+        self.json_config = config
         self.procesor = UTA(file_name)
 
     def run(self):
@@ -69,15 +71,3 @@ class ExecutorUTA:
                     print(f"Error calling method '{method_name}': {e}")
             else:
                 print(f"Method '{method_name}' not found in DataProcessor.")
-
-if __name__ == "__main__":
-    json_path = "config.json"
-    file_name = "SampleSalesData/sales_data_sample.csv"
-    
-    with open(json_path, "r") as file:
-        config = json.load(file)
-
-    executor = ExecutorUTA(config, file_name)
-    executor.run()
-
-
